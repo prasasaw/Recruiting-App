@@ -6,7 +6,7 @@ Created on Fri Jul 13 10:43:46 2018
 input: single file input
 output: text string
 
-TODO:
+TODOs:
 filepath =[]
 Employee = []
 
