@@ -113,7 +113,7 @@ def extract_skills(OneText,categories,x):
         found = False
         found = check_match(OneText, a.lower())
         if found:
-            matched_skills.append(a)
+            matched_skills.append(a.strip())
     
     #return (' '.join(matched_skills)) # not returning string but list instead
     return matched_skills
@@ -157,3 +157,15 @@ def extract_text_from_pdf(pdf_path): # works fairly well. Issue with DOB
     retstr.close()
     return text   
 
+def extract_summary(resumetext):
+    all_lines=resumetext.splitlines()
+    filled_lines=[]
+    
+    for x in all_lines:
+        x=" ".join(x.split()) # removing whitespaces
+      #  f=re.search('[^A-Za-z ,]\1{3}', x)
+        if len(x) > 50:
+            filled_lines.append(x)
+    
+    summary=" ".join(filled_lines[1:2])
+    return summary

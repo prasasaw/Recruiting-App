@@ -47,6 +47,9 @@ def parse_resume(resumetext):
         
         # extract experience
         experience = func.find_experience(resumetext)
+        
+        # extract summary
+        summary = func.extract_summary(resumetext)
             
         # extract skills
         for categories, x in func.get_conf('Categories').items():
@@ -63,9 +66,7 @@ def parse_resume(resumetext):
             if categories == 'roles':
                 roles = func.extract_skills(resumetext,categories,x)
     
-        return {'resumetext':resumetext, 
-                'tokens':tokens,
-                'cleansed_text':cleansed_text,
+        return {'summary':summary,
                 'dob':dob,
                 'age':age,
                 'experience':experience,
@@ -74,7 +75,10 @@ def parse_resume(resumetext):
                 'programming':programming,
                 'packages':packages,
                 'domains':domains,
-                'roles':roles        
+                'roles':roles
+               # 'resumetext':resumetext, 
+               # 'tokens':tokens,
+               # 'cleansed_text':cleansed_text,
                 }    
 
 
