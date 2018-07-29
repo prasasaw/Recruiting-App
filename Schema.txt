@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 First Name
 Last Name
 Age
@@ -18,3 +19,25 @@ Employee Flag (flag)
 Career aspiration (varchar 2000)
 Work satisfaction feedback (varchar 2000)
 Skill usage (varchar 2000)
+=======
+First Name
+Last Name
+Age
+DOB
+Experience
+Mobile
+Email
+Location (varchar 200)
+Packages/ tools (list)
+Prog Lang (list)
+Summary (varchar 2000)
+Domains (list)
+Roles (list)
+Universities (list)
+Education (list)
+Hashtags/ keywords (varchar 2000)
+Employee Flag (flag)
+Career aspiration (varchar 2000)
+Work satisfaction feedback (varchar 2000)
+Skill usage (varchar 2000)
+>>>>>>> 149edd332252dd90a783a6da4e6953ffa9762ef4
