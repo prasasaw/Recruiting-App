@@ -4,14 +4,13 @@ Created on Sun Jun  3 18:41:34 2018
 @author: prasasaw
 
 TODO:
+Name    
 Universities : NNP parsing of school, college and universities
-Term frequency vectors with scoring mechanism
-Resume summary
-Secondary:
-Experience (high)
-certi
+certification
 Companies
 Education
+country
+city
 
 See code examples from Sci kit
 http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer.build_preprocessor

@@ -158,6 +158,12 @@ def extract_text_from_pdf(pdf_path): # works fairly well. Issue with DOB
     return text   
 
 def extract_summary(resumetext):
+    """
+    todo: discard lines that have 
+    -words like e*mail, address phone etc..
+    -continuous string of special characters (>3)
+    optionally objectives should be skipped
+    """
     all_lines=resumetext.splitlines()
     filled_lines=[]
     
