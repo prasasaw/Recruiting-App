@@ -166,12 +166,17 @@ def extract_summary(resumetext):
     """
     all_lines=resumetext.splitlines()
     filled_lines=[]
+    found = ""
     
     for x in all_lines:
         x=" ".join(x.split()) # removing whitespaces
-      #  f=re.search('[^A-Za-z ,]\1{3}', x)
-        if len(x) > 50:
+        match = re.findall(r'.*prof*.*summary.*|.*synopsis*.', x, flags=re.IGNORECASE)
+        for i in match:
+            found = 'True'
+      
+        if len(x) > 50 and found == 'True':
             filled_lines.append(x)
     
-    summary=" ".join(filled_lines[1:2])
+    summary=" ".join(filled_lines[0:2])
     return summary
+

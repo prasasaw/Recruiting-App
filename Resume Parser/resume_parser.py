@@ -45,9 +45,11 @@ def parse_resume(resumetext):
         phone = func.extract_phone(resumetext)
         
         # extract experience
+        experience = ''
         experience = func.find_experience(resumetext)
         
         # extract summary
+        summary = ''
         summary = func.extract_summary(resumetext)
             
         # extract skills
