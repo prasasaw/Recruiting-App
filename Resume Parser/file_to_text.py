@@ -55,4 +55,5 @@ def text_converter(filename):
         OneText = func.extract_text_from_pdf(filename)  
     
     return(OneText)
-        
+    
+  

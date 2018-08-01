@@ -15,5 +15,5 @@ files = glob.glob(os.path.join(dir,"*"))
 for filename in files:
 
     resumetext = file_to_text.text_converter(filename)
-    output = resume_parser.parse_resume(resumetext)
+    output = resume_parser.parse_resume(resumetext, filename)
 

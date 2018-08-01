@@ -20,9 +20,15 @@ try spacy
 
 import func
 import re
+import os
 
-def parse_resume(resumetext):
-      
+def parse_resume(resumetext, filename):
+    
+        employee = os.path.splitext(filename)[0]
+        employee = os.path.split(employee)[1]
+        # cleanse employee Name
+        employee = func.cleanse_name(employee)
+              
         tokens = func.process_message(resumetext, stem = False) ## tokens, used to build dictionary later
         cleansed_text = str(tokens) 
         cleansed_text = re.sub('[^A-Za-z0-9]+', ' ', cleansed_text)
@@ -67,7 +73,8 @@ def parse_resume(resumetext):
             if categories == 'roles':
                 roles = func.extract_skills(resumetext,categories,x)
     
-        return {'summary':summary,
+        return {'employee':employee,
+                'summary':summary,
                 'dob':dob,
                 'age':age,
                 'experience':experience,
