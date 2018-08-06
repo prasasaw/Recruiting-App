@@ -164,19 +164,23 @@ def extract_summary(resumetext):
     -continuous string of special characters (>3)
     optionally objectives should be skipped
     """
+    summary = ''
     all_lines=resumetext.splitlines()
     filled_lines=[]
     found = ""
     
     for x in all_lines:
         x=" ".join(x.split()) # removing whitespaces
+        """
         match = re.findall(r'.*prof*.*summary.*|.*synopsis*.', x, flags=re.IGNORECASE)
         for i in match:
             found = 'True'
       
-        if len(x) > 50 and found == 'True':
+        if len(x) > 50 and found == 'True':"""
+        if len(x) > 50:
             filled_lines.append(x)
     
     summary=" ".join(filled_lines[0:2])
     return summary
+
 

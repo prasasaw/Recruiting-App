@@ -15,7 +15,7 @@ Categories:
   - PLSQL
   - C programming 
   - Ruby
-  - VB
+  - ' VB,'
   - Unix
   - XML
   - HTML
@@ -71,7 +71,7 @@ Categories:
 
   
  domain:
-  - ' HR'
+  - Human resource
   - Finance
   - Telecom
   - Retail
@@ -79,6 +79,7 @@ Categories:
   - Sales
   - Marketing
   - Data migration
+  - Order Management
 
   
  roles:

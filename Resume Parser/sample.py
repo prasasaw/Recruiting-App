@@ -6,6 +6,7 @@ Created on Fri Jul 13 12:01:19 2018
 """
 import resume_parser
 import file_to_text
+import section
 import glob
 import os
 
@@ -15,5 +16,6 @@ files = glob.glob(os.path.join(dir,"*"))
 for filename in files:
 
     resumetext = file_to_text.text_converter(filename)
-    output = resume_parser.parse_resume(resumetext, filename)
+    sectiontext = section.sectionize(resumetext)
+    output = resume_parser.parse_resume(sectiontext, filename)
 
