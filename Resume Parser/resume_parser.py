@@ -22,7 +22,7 @@ import func
 import re
 import os
 
-def parse_resume(resumetext, filename):
+def parse_resume(resumetext, filename, sections):
     
         employee = os.path.splitext(filename)[0]
         employee = os.path.split(employee)[1]
@@ -54,27 +54,30 @@ def parse_resume(resumetext, filename):
         experience = ''
         experience = func.find_experience(resumetext)
         
-        # extract summary
+        # Not used. Extracts first 2-3 lines of resume
         summary = ''
         summary = func.extract_summary(resumetext)
-            
+        
+        skills = sections['Skills'] + sections['Profsummary'] + sections['Trainings'] + sections['Qualification'] +  sections['Achievements']
+        
         # extract skills
         for categories, x in func.get_conf('Categories').items():
             
             if categories == 'programming':
-                programming = func.extract_skills(resumetext,categories,x)
+                programming = func.extract_skills(skills,categories,x)
                  
             if categories == 'packages':
-                packages = func.extract_skills(resumetext,categories,x)
+                packages = func.extract_skills(skills,categories,x)
                
             if categories == 'domain':
-                domains = func.extract_skills(resumetext,categories,x)
+                domains = func.extract_skills(skills,categories,x)
                  
             if categories == 'roles':
-                roles = func.extract_skills(resumetext,categories,x)
-    
+                roles = func.extract_skills(skills,categories,x)
+        
+   
         return {'employee':employee,
-                'summary':summary,
+                #'summary':summary,
                 'dob':dob,
                 'age':age,
                 'experience':experience,
@@ -83,8 +86,17 @@ def parse_resume(resumetext, filename):
                 'programming':programming,
                 'packages':packages,
                 'domains':domains,
-                'roles':roles
-               # 'resumetext':resumetext, 
+                'roles':roles,
+                'sProfsummary':sections['Profsummary'],
+                'sObjective':sections['Objective'],
+                'sQualification':sections['Qualification'],
+                'sSkills':sections['Skills'],
+                'sProjects':sections['Projects'],
+                'sAchievements':sections['Achievements'],
+                'sTrainings':sections['Trainings'],
+                'sEducation':sections['Education'],
+                'sPersonalsummary':sections['Personalsummary'],
+                'resumetext':resumetext
                # 'tokens':tokens,
                # 'cleansed_text':cleansed_text,
                 }    

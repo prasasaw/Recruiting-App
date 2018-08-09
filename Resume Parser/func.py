@@ -71,11 +71,12 @@ def calculate_age(dob):
 
 def find_experience(text):
     experience = ''
-    items=re.findall(".*years.*",text,re.MULTILINE)   
+    items=re.findall(".*(?i)years.*",text,re.MULTILINE)   
     for x in items:
             for s in x.split():
                 if s.isdigit():
-                    experience = s
+                    experience = s                    
+       
     return experience
 
 def extract_email(text):
